@@ -8,7 +8,7 @@
 # create array $names with first line "firstname, lastname, samaccountname"
 $names=@("firstname," + "lastname," + "samaccountname")
 
-# read from file 2021-08-new-accounts.csv (comma separated file) in current directory
+# read from file new-accounts.csv (comma separated file) in current directory
 # the ` at the end of the line means: extend the line
 import-csv .\new-accounts.csv | `
 
