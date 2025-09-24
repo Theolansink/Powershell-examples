@@ -1,2 +1,1 @@
-## Repository for Powershell example scripts:
-- 
+## Repository for Powershell example scripts
