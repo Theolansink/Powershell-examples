@@ -21,7 +21,7 @@ function New-ADUsersFromCsv {
     New-ADUsersFromCsv -CsvPath "C:\Temp\Users.csv" -DefaultPassword "Welkom123!"
 
 #>
-
+ [CmdletBinding()]   # dit voegt extra cmdlet-achtige features toe als pipelining, erroraction etc
     param (
         [Parameter(Mandatory = $true)]
         [string]$CsvPath,
