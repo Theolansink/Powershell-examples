@@ -9,4 +9,4 @@
 |[remove-disabled-accounts.ps1](./remove-disabled-accounts.ps1)| Powershellscript voor verwijderen disabled accounts uit AD|
 |[new-accounts.csv](./new-accounts.csv)| CSV Bestand met gebruikersnamen die nog moeten wordn omgezet naar accountnamen |
 |[create-usernames-csvfile.ps1](./create-usernames-csvfile.ps1)| Powershellscript om gebruikersnamen om te zetten naar accountnamen|
-
+|[new-AdUsersFromCSV.ps1](./new-AdUsersFromCSV.ps1)| Als new-bulk-adusers.ps1 maar dan als cmdlet|
