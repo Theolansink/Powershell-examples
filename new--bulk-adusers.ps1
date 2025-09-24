@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Script om gebruikers automatisch aan te maken in Active Directory op basis van een CSV-bestand.
 
@@ -12,8 +12,6 @@
     - Schrijft lijsten met succesvolle en mislukte accounts naar bestanden
 #>
 
-# Zorg dat de ActiveDirectory module beschikbaar is
-Import-Module ActiveDirectory -ErrorAction Stop
 
 # === Stap 1: Helptekst ===
 Write-Host "===================================================" -ForegroundColor Cyan
@@ -48,14 +46,11 @@ foreach ($User in $Users) {
     try {
         New-ADUser `
             -SamAccountName $User.SamAccountName `
-            -UserPrincipalName "$($User.SamAccountName)@domain.local" `
-            -GivenName $User.GivenName `
-            -Surname $User.Surname `
-            -Name "$($User.GivenName) $($User.Surname)" `
-            -Path $User.OU `
-            -AccountPassword (ConvertTo-SecureString $User.Password -AsPlainText -Force) `
-            -ChangePasswordAtLogon $true `
-            -Enabled $true -ErrorAction Stop
+            -UserPrincipalName "$($User.SamAccountName)@orcsnest.uk"  `
+            -GivenName $User.FirstName `
+            -Surname $User.Lastname `
+            -Name "$($User.FirstName) $($User.Lastname)" `
+            -ChangePasswordAtLogon $true  -ErrorAction Stop
 
         Write-Host "Useraccount $($User.SamAccountName) is successfully created" -ForegroundColor Green
         $CreatedAccounts += $User.SamAccountName
@@ -73,7 +68,7 @@ Write-Host "Number of accounts that could not be created: $($FailedAccounts.Coun
 Write-Host "===================================================" -ForegroundColor Cyan
 
 # === Stap 6: Logbestanden schrijven ===
-$CreatedAccounts | Out-File -FilePath ".\created-accounts.txt" -Encoding UTF8
-$FailedAccounts  | Out-File -FilePath ".\not-created-accounts.txt" -Encoding UTF8
+$CreatedAccounts | Out-File -FilePath ".\created-accounts.txt"
+$FailedAccounts  | Out-File -FilePath ".\not-created-accounts.txt"
 
 Write-Host "Overzicht opgeslagen in 'created-accounts.txt' en 'not-created-accounts.txt'" -ForegroundColor Cyan

@@ -1,4 +1,4 @@
-﻿# script that uses file 2017-08-new-accounts.csv as input
+# script that uses file new-accounts.csv as input
 # script creates file AD-usernames.csv as output
 # inputfile has just one column: name.
 # Example names are John Breskens and Dirk van de Pol.
@@ -10,7 +10,7 @@ $names=@("firstname," + "lastname," + "samaccountname")
 
 # read from file 2021-08-new-accounts.csv (comma separated file) in current directory
 # the ` at the end of the line means: extend the line
-import-csv .\2021-08-new-accounts.csv | `
+import-csv .\new-accounts.csv | `
 
 # for each line
 foreach-object { 
