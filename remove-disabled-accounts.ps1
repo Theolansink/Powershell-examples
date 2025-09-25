@@ -16,7 +16,7 @@ Write-Host "===================================================" -ForegroundColo
 Write-Host "This script removes disabled accounts from Active Directory." -ForegroundColor Cyan
 Write-Host "===================================================" -ForegroundColor Cyan
 
-$Users = get-aduser -filter {enabled -eq $false} -Property enabled
+$Users = get-aduser -filter {enabled -eq $false}
 Write-Host "Nr of disabled users: " $Users.Count -ForegroundColor Yellow
 Write-host "Users to be deleted:"
 $users | Write-Host
