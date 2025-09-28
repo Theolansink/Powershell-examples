@@ -54,3 +54,7 @@ Write-host "Derde woord: $($words[2])"
 
 # Length - number of characters
 Write-Host "Length: $($str.Length)"
+
+# sterke typering (type aangeven)
+[string]$voorbeeld = "dit gaat goed"
+write-host "$voorbeeld"
