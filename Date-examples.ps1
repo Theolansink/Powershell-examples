@@ -30,7 +30,7 @@ Write-Host "Volgend jaar: $nextYear"
 $start = Get-Date "2025-01-01"
 $end = Get-Date "2025-12-31"
 $diff = $end - $start
-Write-Host "Verschil tussen $start en $end: $($diff.Days) dagen"
+Write-Host "Verschil tussen $start en $end : $($diff.Days) dagen"
 
 # Datum vergelijken
 if ($now -gt $birthday) {
