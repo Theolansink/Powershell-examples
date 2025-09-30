@@ -39,8 +39,8 @@ Write-host "Concatenated String Str + Middle part string: $concat"
 Write-Host "Contains('CG'): $($str.Contains('CG'))"
 
 # StartsWith / EndsWith
-Write-Host "StartsWith('Power'): $($trimmed.StartsWith('Power'))"
-Write-Host "EndsWith('!'): $($trimmed.EndsWith('!'))"
+Write-Host "StartsWith('Welcome'): $($trimmed.StartsWith('Welcome'))"
+Write-Host "EndsWith('G'): $($trimmed.EndsWith('G'))"
 
 # IndexOf - find the position of a substring
 Write-Host "IndexOf('is'): $($trimmed.IndexOf('is'))"
