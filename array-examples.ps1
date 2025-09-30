@@ -1,42 +1,90 @@
-# get-process-arrays-demo.ps1
-# Demo: Working with arrays created by Get-Process
+# ===========================
+# Arrays declareren
+# ===========================
+$numbers = 1, 2, 3, 4, 5
+$fruits = @("Appel", "Banaan", "Kers")
 
-Write-Host "=== Get-Process Array Demo ===" -ForegroundColor Cyan
-
-# Get all running processes (creates an array)
-$processes = Get-Process
-Write-Host "Number of processes: $($processes.Count)"
-Write-Host "Type of array: $($processes.GetType().Name)"
+Write-Host "Oorspronkelijke arrays:"
+Write-Host "Numbers: $numbers"
+Write-Host "Fruits: $fruits"
 Write-Host ""
 
-Write-Host "=== Accessing Elements ===" -ForegroundColor Cyan
-Write-Host "First process name: $($processes[0].Name)"
-Write-Host "Last process name: $($processes[-1].Name)"
-Write-Host "Subarray of first 5 processes:"
-$processes[0..4] | ForEach-Object { Write-Host "  $_.Name" }
+# ===========================
+# Elementen toevoegen
+# ===========================
+$numbers += 6
+$fruits += "Druif"
+
+Write-Host "Na toevoegen:"
+Write-Host "Numbers: $numbers"
+Write-Host "Fruits: $fruits"
 Write-Host ""
 
-Write-Host "=== Iterating Over Processes ===" -ForegroundColor Cyan
-foreach ($proc in $processes[0..4]) {
-    Write-Host "Process: $($proc.Name), ID: $($proc.Id), CPU: $($proc.CPU)"
+# ===========================
+# Elementen verwijderen (is eigenlijk nieuwe array aanmaken zonder verwijderde elementen)
+# ===========================
+$numbers = $numbers | Where-Object { $_ -ne 3 }
+
+Write-Host "Na verwijderen van 3:"
+Write-Host "Numbers: $numbers"
+Write-Host ""
+
+# ===========================
+# Sorteren
+# ===========================
+$sortedNumbers = $numbers | Sort-Object
+$sortedFruits = $fruits | Sort-Object
+
+Write-Host "Gesorteerd:"
+Write-Host "Numbers: $sortedNumbers"
+Write-Host "Fruits: $sortedFruits"
+Write-Host ""
+
+# ===========================
+# Omgekeerde volgorde
+# ===========================
+$reversedNumbers = $numbers[($numbers.Length-1)..0]
+
+Write-Host "Omgekeerde volgorde van Numbers:"
+Write-Host $reversedNumbers
+Write-Host ""
+
+# ===========================
+# Unieke waarden
+# ===========================
+$mixed = 1,2,2,3,3,4,5,5
+$unique = $mixed | Sort-Object -Unique
+
+Write-Host "Unieke waarden uit (1,2,2,3,3,4,5,5):"
+Write-Host $unique
+Write-Host ""
+
+# ===========================
+# Indexeren
+# ===========================
+Write-Host "Eerste fruit: $($fruits[0])"
+Write-Host "Laatste getal: $($numbers[-1])"
+Write-Host ""
+
+# ===========================
+# Array doorlopen
+# ===========================
+Write-Host "Alle fruits doorlopen:"
+foreach ($fruit in $fruits) {
+    Write-Host "- $fruit"
 }
 Write-Host ""
 
-Write-Host "=== Array Methods and Operators ===" -ForegroundColor Cyan
-# Sort by process name
-$sorted = $processes | Sort-Object Name
-Write-Host "First 5 sorted process names:"
-$sorted[0..4] | ForEach-Object { Write-Host "  $_.Name" }
+# ===========================
+# Array-operatoren
+# ===========================
+Write-Host "Aantal elementen (Count): $($numbers.Count)"
+Write-Host "Aantal elementen (Length): $($numbers.Length)"
 
-# Filter using -contains or Where-Object
-$notepad = $processes | Where-Object { $_.Name -eq "notepad" }
-Write-Host ""
-Write-Host "Notepad processes found: $($notepad.Count)"
-Write-Host ""
+Write-Host "Maximum van Numbers: $(($numbers | Measure-Object -Maximum ).Maximum)"
+Write-Host "Minimum van Numbers: $(($numbers | Measure-Object -Minimum ).Minimum)" 
+# andere notatie Measure-objects met Select-Object
+Write-Host "Som van Numbers: $($numbers | Measure-Object -Sum | Select-Object -ExpandProperty Sum)"
+Write-Host "Gemiddelde van Numbers: $($numbers | Measure-Object -Average | Select-Object -ExpandProperty Average)"
 
-Write-Host "=== Join Process Names Into a String ===" -ForegroundColor Cyan
-$names = ($processes[0..4].Name) -join ", "
-Write-Host "First 5 process names joined: $names"
-Write-Host ""
-
-Write-Host "=== End of Demo ===" -ForegroundColor Green
+Write-host "Gemiddelde CPU gebruik processen: $(get-process | measure-object -property cpu -Average | select-object -ExpandProperty Average)"
