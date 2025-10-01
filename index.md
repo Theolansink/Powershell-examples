@@ -42,4 +42,4 @@
 |--------------|-------------|
 |[Config-PSremoting-Target.ps1](./PS-remoting/Config-PSremoting-Target.ps1) | Script om PSremoting op target te configureren |
 |[config-psremoting-client.ps1](./PS-remoting/config-psremoting-client.ps1) | Script om PSremoting op client te configureren |
-|[New-bulk-adusers-winrm.ps1](.PS-remoting/New-bulk-adusers-winrm.ps1) | Scripot om remote bulk  AD-users toe te voegen |
+|[New-bulk-adusers-winrm.ps1](./PS-remoting/New-bulk-adusers-winrm.ps1) | Script om remote bulk  AD-users toe te voegen |
