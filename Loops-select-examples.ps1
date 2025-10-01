@@ -1,21 +1,32 @@
 # --------------------------------------------
-# Loops and select: Get-Process Examples
+# PowerShell Script: Loops and select - Get-Process Examples
 # --------------------------------------------
 
-# Get current processes
+# ============================================
+# 🔹 Huidige processen ophalen
+# ============================================
 $processes = Get-Process
 
+# ============================================
+# 🔹 FOREACH met array
+# ============================================
 Write-Host "`n=== FOREACH with array ==="
 foreach ($proc in $processes) {
-    # Print process name and ID
+    # Print process name, ID en starttijd
     Write-Host "Process: $($proc.ProcessName), ID: $($proc.Id), $($proc.StartTime)"
 }
 
+# ============================================
+# 🔹 ForEach-Object (pipeline)
+# ============================================
 Write-Host "`n=== ForEach-Object (pipeline) ==="
 $processes | ForEach-Object {
     Write-Host "Process: $($_.ProcessName), CPU: $($_.CPU)"
 }
 
+# ============================================
+# 🔹 IF statement
+# ============================================
 Write-Host "`n=== IF statement ==="
 foreach ($proc in $processes) {
     if ($proc.CPU -gt 100) {
@@ -23,15 +34,21 @@ foreach ($proc in $processes) {
     }
 }
 
+# ============================================
+# 🔹 SWITCH statement
+# ============================================
 Write-Host "`n=== SWITCH statement ==="
 foreach ($proc in $processes) {
     switch ($proc.ProcessName) {
         "powershell" { Write-Host "This is a PowerShell process: $($proc.Id)" }
         "explorer"   { Write-Host "Explorer process found: $($proc.Id)" }
-        default      { } # do nothing for other processes
+        default      { } # doe niets voor andere processen
     }
 }
 
+# ============================================
+# 🔹 WHILE loop
+# ============================================
 Write-Host "`n=== WHILE loop ==="
 $index = 0
 while ($index -lt $processes.Count -and $index -lt 5) {
@@ -40,6 +57,9 @@ while ($index -lt $processes.Count -and $index -lt 5) {
     $index++
 }
 
+# ============================================
+# 🔹 DO-WHILE loop
+# ============================================
 Write-Host "`n=== DO-WHILE loop ==="
 $index = 0
 do {
@@ -48,9 +68,12 @@ do {
     $index++
 } while ($index -lt 5)
 
+# ============================================
+# 🔹 BREAK en CONTINUE voorbeeld
+# ============================================
 Write-Host "`n=== BREAK and CONTINUE example ==="
 foreach ($proc in $processes) {
-    if ($proc.ProcessName -eq "Idle") { continue }  # skip Idle processes
-    if ($proc.Id -gt 10000) { break }              # stop loop on large ID
+    if ($proc.ProcessName -eq "Idle") { continue }  # sla Idle processen over
+    if ($proc.Id -gt 10000) { break }              # stop loop bij groot ID
     Write-Host "Process: $($proc.ProcessName), ID: $($proc.Id)"
 }

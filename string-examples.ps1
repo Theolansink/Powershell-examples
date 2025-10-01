@@ -1,60 +1,88 @@
-# Define a sample string
+#############################################################
+# Voorbeelden stringmanipulaties
+#############################################################
+
+# Definieer een voorbeeld string
 $str = "   Welcome at UMCG   "
+Write-Host "Originele string: $str"
+Write-Host "--------------------------------------------------`n"
 
-Write-Host "Original String: $str"
-Write-Host "----------------------------------"
+# ----------------------------------------------------------
+# 🔠 Hoofdletters en kleine letters
+# ----------------------------------------------------------
+Write-Host "ToUpper(): $($str.ToUpper())"
+Write-Host "ToLower(): $($str.ToLower())"
+Write-Host "--------------------------------------------------`n"
 
-# Trim - remove leading/trailing spaces
-$trimmed = $str.Trim()
-Write-Host "Trim(): $trimmed"
-
-# ToUpper - convert to uppercase
-$upper = $str.ToUpper()
-Write-Host "ToUpper(): $upper)"
-
-# ToLower - convert to lowercase
-$lower = $str.ToLower()
-Write-Host "ToLower(): $lower"
-
-# Substring - take part of the string (notation 1)
-$substring = $str.Substring(0, 10)
-Write-Host "Substring(0, 10): $substring"
-
-# Substring - take part of the string (notation 2)
+# ----------------------------------------------------------
+# 🔍 Delen van een string pakken
+# ----------------------------------------------------------
 Write-Host "Substring(0, 10): $($str.Substring(0, 10))"
+Write-Host "--------------------------------------------------`n"
 
-# Replace - replace text (method, exact replacement)
-$replacedString = $str.Replace('UMCG','Universitair Medisch Centrum Groningen')
-Write-Host "Replace('UMCG', 'Universitair Medisch Centrum Groningen'): $($replacedString)"
+# ----------------------------------------------------------
+# 🔄 Tekst vervangen
+# ----------------------------------------------------------
+$replaced = $str.Replace("UMCG","Universitair Medisch Centrum Groningen")
+Write-Host "Replace(): $replaced"
 
-# replace part of string (operator as +, -, *, -split, -join etc; regex based; not exact string)
-$substring = $str -replace('\s[a-zA-Z]+\s', ' ')
-Write-host "Middel part string removed: $substring"
+$regexReplace = $str -replace('\s[a-zA-Z]+\s', ' ')
+Write-Host "Regex Replace (middenwoord weg): $regexReplace"
+Write-Host "--------------------------------------------------`n"
 
-# Concat strings
-$concat = $str + $substring
-Write-host "Concatenated String Str + Middle part string: $concat"
+# ----------------------------------------------------------
+# ➕ Strings samenvoegen
+# ----------------------------------------------------------
+$concat = $str + " | " + $trimmed
+Write-Host "Concatenatie: $concat"
+Write-Host "--------------------------------------------------`n"
 
-# Contains - check if substring exists
+# ----------------------------------------------------------
+# ✂️ Spaties en whitespace verwijderen
+# ----------------------------------------------------------
+# Let op:
+# - Trim() verwijdert ALLE whitespace (spaties, tabs, nieuwe regels)
+#   aan BEGIN en EINDE van de string, niet alleen spaties.
+# - TrimStart() en TrimEnd() bestaan ook.
+#
+# Voorbeeldstring met tab en newline:
+$whitespaceString = "`t   Welcome at UMCG   `n"
+Write-Host "Originele string met tab en newline: [$whitespaceString]"
+Write-Host "Lengte voor Trim(): $($whitespaceString.Length)"
+
+$trimmed = $whitespaceString.Trim()
+Write-Host "Na Trim(): '[$trimmed]'"
+Write-Host "Lengte na Trim(): $($trimmed.Length)"
+Write-Host "--------------------------------------------------`n"
+
+# ----------------------------------------------------------
+# ❓ Zoeken in een string
+# ----------------------------------------------------------
 Write-Host "Contains('CG'): $($str.Contains('CG'))"
-
-# StartsWith / EndsWith
 Write-Host "StartsWith('Welcome'): $($trimmed.StartsWith('Welcome'))"
 Write-Host "EndsWith('G'): $($trimmed.EndsWith('G'))"
+Write-Host "IndexOf('at'): $($trimmed.IndexOf('at'))"
+Write-Host "--------------------------------------------------`n"
 
-# IndexOf - find the position of a substring
-Write-Host "IndexOf('is'): $($trimmed.IndexOf('is'))"
+# ----------------------------------------------------------
+# 🪓 String splitsen in woorden
+# ----------------------------------------------------------
+$words = $trimmed.Split(" ")
+Write-Host "Split(): $words"
+Write-Host "Eerste woord: $($words[0])"
+Write-Host "Tweede woord: $($words[1])"
+Write-Host "Derde woord: $($words[2])"
+Write-Host "--------------------------------------------------`n"
 
-# Split - break into words
-$words = $str.Split(" ")
-Write-Host "Split(): $words "
-Write-host "Eerste woord: $($words[0])"
-Write-host "Tweede woord: $($words[1])"
-Write-host "Derde woord: $($words[2])"
+# ----------------------------------------------------------
+# 🔢 Lengte van de string
+# ----------------------------------------------------------
+Write-Host "Lengte: $($str.Length)"
+Write-Host "--------------------------------------------------`n"
 
-# Length - number of characters
-Write-Host "Length: $($str.Length)"
-
-# sterke typering (type aangeven)
+# ----------------------------------------------------------
+# 🛡️ Sterke typing (casten naar string)
+# ----------------------------------------------------------
 [string]$voorbeeld = "dit gaat goed"
-write-host "$voorbeeld"
+Write-Host "Voorbeeld string: $voorbeeld"
+Write-Host "--------------------------------------------------`n"
