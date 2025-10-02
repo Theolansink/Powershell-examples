@@ -19,6 +19,7 @@
 |[string-examples.ps1](./Examples/string-examples.ps1)| Voorbeelden string methoden en operatoren |
 |[quote-examples.ps](./Examples/quote-examples.ps1) | Voorbeelden quotes in Powershell |
 |[array-examples.ps1](./Examples/array-examples.ps1) | Voorbeelden gebruik array |
+|[hashtable-examples.ps1](./Examples/hashtable-examples.ps1) | Voorbeelden gebruik hashtable |
 |[Date-examples.ps1](./Examples/Date-examples.ps1) | Voorbeelden Date object |
 |[Loops-select-examples.ps1](./Examples/Loops-select-examples.ps1) | Voorbeelden Loops en select |
 |[critical-events.ps1](./Examples/critical-events.ps1) | Toepassing: Script voor tonen critical events |
