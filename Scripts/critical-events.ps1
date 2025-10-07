@@ -13,7 +13,7 @@ $filterHash = @{
 }
 
 # Get high severity security events
-$highSeverityEvents = Get-WinEvent -FilterHashtable $filterHash -MaxEvents 50
+
 
 # Display the events
 $highSeverityEvents | ForEach-Object {
