@@ -9,15 +9,15 @@
 |[remove-disabled-accounts.ps1](./Scripts/remove-disabled-accounts.ps1)| Powershellscript voor verwijderen disabled accounts uit AD|
 |[new-accounts.csv](./Scripts/new-accounts.csv)| CSV Bestand met gebruikersnamen die nog moeten wordn omgezet naar accountnamen |
 |[create-usernames-csvfile.ps1](./Scripts/create-usernames-csvfile.ps1)| Powershellscript om gebruikersnamen om te zetten naar accountnamen|
-(|critical-events.ps1 ](./Scripts/critical-events.ps1) | Powershellscript om critical events uit eventlog te tonen |
-(|critical-events-param.ps1](./Scripts/critical-events-param.ps1) | toon critical events met gebruik van parameters |
+|[critical-events.ps1 ](./Scripts/critical-events.ps1) | Powershellscript om critical events uit eventlog te tonen |
+|[critical-events-param.ps1](./Scripts/critical-events-param.ps1) | toon critical events met gebruik van parameters |
 
 #### Voorbeelden:
 
 | Bestandsnaam | Omschrijving|
 |--------------|-------------|
 |[find-cmdlets-examples.ps1](./Examples/find-cmdlets-examples.ps1)| Voorbeelden: Hoe vindt je cmdlets en informatie daarover |
-|[pipeline.ps1]./Examples/pipeline.ps1)| Voorbeelden van cmdlets in de pipeline |
+|[pipeline.ps1](./Examples/pipeline.ps1)| Voorbeelden van cmdlets in de pipeline |
 |[string-examples.ps1](./Examples/string-examples.ps1)| Voorbeelden string methoden en operatoren |
 |[quote-examples.ps](./Examples/quote-examples.ps1) | Voorbeelden quotes in Powershell |
 |[array-examples.ps1](./Examples/array-examples.ps1) | Voorbeelden gebruik array |
