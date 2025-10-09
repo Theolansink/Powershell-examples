@@ -1,13 +1,13 @@
-## Oefeningen Powershell scripting
+ ## Oefeningen Powershell scripting
 
-#### Link naar labs Microsoft AZ040: 
+#### Link naar labs Microsoft AZ040:  
 [AZ040 Powershell labs ]( https://microsoftlearning.github.io/AZ-040T00-Automating-Administration-with-PowerShell/)
 
-#### Shellscripts en CSV-bestanden:
+#### Shellscripts en CSV-bestanden: 
 
 | Bestandsnaam | Omschrijving|
 |--------------|-------------|
-|[AD-usernames.csv](./Scripts/AD-usernames.csv)| CSV Bestand met aan te maken accounts |
+|[AD-usernames.csv](./Scripts/AD-usernames.csv)| CSV Bestand met aan te maken accounts | 
 |[new-bulk-adusers.ps1](./Scripts/new-bulk-adusers.ps1)| Powershellscript voor aanmaken accounts in Active Directory|
 |[remove-disabled-accounts.ps1](./Scripts/remove-disabled-accounts.ps1)| Powershellscript voor verwijderen disabled accounts uit AD|
 |[new-accounts.csv](./Scripts/new-accounts.csv)| CSV Bestand met gebruikersnamen die nog moeten wordn omgezet naar accountnamen |
@@ -27,6 +27,7 @@
 |[hashtable-examples.ps1](./Examples/hashtable-examples.ps1) | Voorbeelden gebruik hashtable |
 |[Date-examples.ps1](./Examples/Date-examples.ps1) | Voorbeelden Date object |
 |[Loops-select-examples.ps1](./Examples/Loops-select-examples.ps1) | Voorbeelden Loops en select |
+|[new-bulk-adusers-hash-param.ps1](./Examples/new-bulk-adusers-hash-param.ps1)| Script voor aanmaken accounts in AD met hashtable en parameter|
 |[critical-events.ps1](./Scripts/critical-events.ps1) | Toepassing: Script voor tonen critical events |
 
 #### Functions:
@@ -35,6 +36,7 @@
 |--------------|-------------|
 |[Get-HighSeverityEventsV1.ps1](./Functions/Get-HighSeverityEventsV1.ps1) | Function om high severity security events te tonen |
 |[Get-HighSeverityEventsV2.ps1](./Functions/Get-HighSeverityEventsV2.ps1) | Function met parameters om high severity security events te tonen |
+|[new-bulk-adusers-function.ps1](./Functions/new-bulk-adusers-function.ps1) | Aanmaken accounts in AD als functie |
 
 #### Modules:
 
