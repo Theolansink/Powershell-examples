@@ -52,7 +52,7 @@ Write-Host "Number of accounts that could not be removed: $($NotRemovedAccounts.
 Write-Host "===================================================" -ForegroundColor Cyan
 
 # === Stap 6: Logbestanden schrijven ===
-$CreatedAccounts | Out-File -FilePath ".\removedAccounts.txt"
-$FailedAccounts  | Out-File -FilePath ".\notRemovedAccounts.txt"
+$RemovedAccounts | Out-File -FilePath ".\removedAccounts.txt"
+$NotRemovedAccounts  | Out-File -FilePath ".\notRemovedAccounts.txt"
 
 Write-Host "Results are in 'removedAccounts.txt' en 'notRemovedAccounts.txt'" -ForegroundColor Cyan
