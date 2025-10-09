@@ -19,8 +19,10 @@ Write-Host "Dit script maakt automatisch gebruikers aan in Active Directory." -F
 Write-Host "Er wordt gebruik gemaakt van een CSV-bestand met gebruikersinformatie." -ForegroundColor Cyan
 Write-Host "===================================================" -ForegroundColor Cyan
 
-# === Stap 2: Vraag gebruiker om pad CSV ===
+# === Stap 2: Vraag gebruiker om benodigde input (CSV-pad en Credentials) ===
 $CsvPath = Read-Host "Geef het volledige pad naar het CSV-bestand"
+
+$cred= Get-Credential -Message "Geef admin usernaam en wachtwoord voor Active Directory"
 
 if ( -not (Test-Path $CsvPath)) {
     Write-Host "CSV-bestand niet gevonden op pad: $CsvPath" -ForegroundColor Red
