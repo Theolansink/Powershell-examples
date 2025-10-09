@@ -27,6 +27,7 @@
 |[hashtable-examples.ps1](./Examples/hashtable-examples.ps1) | Voorbeelden gebruik hashtable |
 |[Date-examples.ps1](./Examples/Date-examples.ps1) | Voorbeelden Date object |
 |[Loops-select-examples.ps1](./Examples/Loops-select-examples.ps1) | Voorbeelden Loops en select |
+|[new-bulk-adusers-hash-param.ps1](./Examples/new-bulk-adusers-hash-param.ps1)| Script voor aanmaken accounts in AD met hashtable en parameter|
 |[critical-events.ps1](./Scripts/critical-events.ps1) | Toepassing: Script voor tonen critical events |
 
 #### Functions:
@@ -35,6 +36,7 @@
 |--------------|-------------|
 |[Get-HighSeverityEventsV1.ps1](./Functions/Get-HighSeverityEventsV1.ps1) | Function om high severity security events te tonen |
 |[Get-HighSeverityEventsV2.ps1](./Functions/Get-HighSeverityEventsV2.ps1) | Function met parameters om high severity security events te tonen |
+|[new-bulk-adusers-function.ps1](./Functions/new-bulk-adusers-function.ps1) | Aanmaken accounts in AD als functie |
 
 #### Modules:
 
