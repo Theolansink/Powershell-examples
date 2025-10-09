@@ -57,6 +57,7 @@ foreach ($User in $Users) {
     }
     catch {
         Write-Host "Useraccount $($User.SamAccountName) could not be created" -ForegroundColor Red
+        write-host "Errormessage $($error[0])"
         $FailedAccounts += $User.SamAccountName
     }
 }
