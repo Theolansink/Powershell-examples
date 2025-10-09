@@ -1,13 +1,13 @@
-## Oefeningen Powershell scripting
+ ## Oefeningen Powershell scripting
 
 #### Link naar labs Microsoft AZ040:  
 [AZ040 Powershell labs ]( https://microsoftlearning.github.io/AZ-040T00-Automating-Administration-with-PowerShell/)
 
-#### Shellscripts en CSV-bestanden:
+#### Shellscripts en CSV-bestanden: 
 
 | Bestandsnaam | Omschrijving|
 |--------------|-------------|
-|[AD-usernames.csv](./Scripts/AD-usernames.csv)| CSV Bestand met aan te maken accounts |
+|[AD-usernames.csv](./Scripts/AD-usernames.csv)| CSV Bestand met aan te maken accounts | 
 |[new-bulk-adusers.ps1](./Scripts/new-bulk-adusers.ps1)| Powershellscript voor aanmaken accounts in Active Directory|
 |[remove-disabled-accounts.ps1](./Scripts/remove-disabled-accounts.ps1)| Powershellscript voor verwijderen disabled accounts uit AD|
 |[new-accounts.csv](./Scripts/new-accounts.csv)| CSV Bestand met gebruikersnamen die nog moeten wordn omgezet naar accountnamen |
