@@ -1,6 +1,6 @@
 ## Oefeningen Powershell scripting
 
-#### Link naar labs Microsoft AZ040: 
+#### Link naar labs Microsoft AZ040:  
 [AZ040 Powershell labs ]( https://microsoftlearning.github.io/AZ-040T00-Automating-Administration-with-PowerShell/)
 
 #### Shellscripts en CSV-bestanden:
