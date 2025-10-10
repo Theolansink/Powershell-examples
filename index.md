@@ -59,3 +59,10 @@
 |[create-scheduled-task.ps1](./ScheduledTask/create-scheduled-task.ps1) | Script om scheduled task te configureren |
 |[get-highsecurityeventsdaily.ps1](./ScheduledTask/get-highsecurityeventsdaily.ps1) | Script om high security events dagelijks in bestand oip te slaan. |
 |[get-highsecurityeventsdailyjob.ps1](./ScheduledTask/get-highsecurityeventsdailyjob.ps1) | Script om scheduled job te configureren (Deprecated: niet in Powershell 7)|
+
+#### Azure
+
+| Bestandsnaam | Omschrijving|
+|--------------|-------------|
+|[Create-Resourcegroup.ps1](./Azure/Create-Resourcegroup.ps1) | Script om Resourcegroup in Azure te maken |
+|[Remove-Resourcegroup.ps1](./Azure/Remove-Resourcegroup.ps1) | Script om Resourcegroup in Azure te verwijderen |
