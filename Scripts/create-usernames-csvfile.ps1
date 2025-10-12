@@ -40,4 +40,4 @@ foreach-object {
     
 
  # write result (in array $names) to outputfile (comma separated file)
- Out-file .\AD-usernames.csv -inputobject $names -force
+ Out-file .\formatted-accountnames.csv -inputobject $names -force
