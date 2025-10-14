@@ -9,7 +9,7 @@ $logName = "Security"
 $filterHash = @{
     LogName   = $logName
     Level     = 1,2  # 1 = Critical, 2 = Error
-    StartTime = (Get-Date).AddDays(7)
+    StartTime = (Get-Date).AddDays(-7)
 }
 
 # Get high severity security events

@@ -4,7 +4,14 @@
 
 param(
     # Naam van de Event Log (standaard "Security")
-    [string]$LogName = "Security",
+    [Parameter(Position=0, Mandatory= $false)]
+    [ValidateScript({
+        if (-not $_) {
+            throw "De parameter 'LogName' mag niet leeg zijn. Geef een lognaam op (bijv. 'Security' of 'Application')."
+        }
+        return $true
+    })]
+    [string]$LogName = "Security" ,
 
     # Aantal dagen terug om events op te halen (standaard 7)
     [int]$DaysBack = 7
