@@ -5,9 +5,9 @@
 .DESCRIPTION
     - Show helptext and accounts to be removed
     - Asks confirmation to continue or stop
-    - Removes the accounts
+    - Removes the disabled accounts
     - Show how many accounts are removed
-    - Creates a list of removed accounts
+    - Creates a file (with date/time in filename) of removed accounts and of the failed accounts
 #>
 
 

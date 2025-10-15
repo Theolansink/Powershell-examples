@@ -1,5 +1,4 @@
-﻿#region SYNOPSIS
-<#
+﻿<#
 .SYNOPSIS
     Script om gebruikers automatisch aan te maken in Active Directory op basis van een CSV-bestand.
 
@@ -12,7 +11,6 @@
     - Geeft per gebruiker terug of het gelukt is of niet
     - Schrijft lijsten met succesvolle en mislukte accounts naar bestanden
 #>
-#endregion
 
 #region Helptekst
 # === Stap 1: Helptekst ===
@@ -51,13 +49,10 @@ $FailedAccounts  = @()
 
 foreach ($User in $Users) {
     try {
-        New-ADUser `
-            -SamAccountName $User.SamAccountName `
-            -UserPrincipalName "$($User.SamAccountName)@orcsnest.uk"  `
-            -GivenName $User.FirstName `
-            -Surname $User.Lastname `
-            -Name "$($User.FirstName) $($User.Lastname)" `
-            -ChangePasswordAtLogon $true  -ErrorAction Stop
+        
+        
+
+
 
         Write-Host "Useraccount $($User.SamAccountName) is successfully created" -ForegroundColor Green
         $CreatedAccounts += $User.SamAccountName
