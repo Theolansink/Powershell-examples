@@ -1,0 +1,63 @@
+<#
+.SYNOPSIS
+    Maakt een back-up van bestanden die langer dan een opgegeven tijd niet geopend zijn.
+
+.DESCRIPTION
+    Dit script maakt een kopie van opgegeven bestanden naar een backupmap als ze de 
+    opgegeven periode niet geopend zijn. Mappen worden overgeslagen. De backupmap 
+    wordt automatisch aangemaakt als deze nog niet bestaat.
+
+.PARAMETER Bestanden
+    Een of meerdere bestanden die gecontroleerd en eventueel geback-upt moeten worden.
+    Kan een enkele string of een array van strings zijn.
+
+.PARAMETER TijdNietGeopend
+    Het aantal dagen dat een bestand niet geopend mag zijn voordat het wordt geback-upt.
+
+.PARAMETER BackupFolder
+    Het pad naar de map waarin de back-ups worden opgeslagen. Standaard "D:\backup".
+
+.EXAMPLE
+    .\BackupBestanden.ps1 -Bestanden "C:\Data\document.txt" -TijdNietGeopend 365
+
+.EXAMPLE
+    .\BackupBestanden.ps1 -Bestanden @("C:\Data\a.txt","C:\Data\b.txt") -TijdNietGeopend 200 -BackupFolder "E:\Backups"
+#>
+
+parameters: 
+    Bestanden,      # Eventueel te backuppen bestanden
+    TijdNietGeopend,
+    BackupFolder (default D:\backup)
+)
+
+# Controleer of backupmap bestaat
+Als BackupFolder niet bestaat, maak deze aan. (test-path)
+
+# Tel aantal gemaakte back-ups
+zet teller gemaakt backups op 0
+
+# Doorloop elk bestand
+herhaal voor elk $bestand in $Bestanden) {
+        Als $bestand niet bestaat, geef een foutmelding (test-path)
+           
+        Als het bestand een container is, sla deze over (get-item )
+
+        Vraag gegevens bestand op zoals datum laatst geopend
+        
+        Als het bestand te lang geleden geopend is (get-item property)
+
+            maak naam backupbestand
+
+            try {
+               copieer bestand naar backupbestand (copy-item)
+                hoog teller aantalk backups op
+                
+            }
+            catch {
+                Geef foutmelding
+        }
+        
+    }
+
+    # Toon totaalresultaat
+    Toon hoeveel bestanden gebackupped zijn.
