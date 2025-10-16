@@ -79,3 +79,7 @@ function BackupInactiveFiles {
     Write-Host "Totaal aantal bestanden geback-upt: $($aantalBackups)" -ForegroundColor Magenta
     Write-Host "===============================" -ForegroundColor White
 }
+
+
+
+funct
