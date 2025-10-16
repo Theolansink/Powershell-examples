@@ -15,8 +15,8 @@ Write-Host "`n=== Classes in root\cimv2 ===" -ForegroundColor Cyan
 $classes = Get-CimClass -Namespace root\cimv2
 $classes | Select-Object CimClassName | Format-Table -AutoSize
 
-# 3. Belangrijke Win32_ classes filteren
-Write-Host "`n=== Belangrijke Win32_ classes ===" -ForegroundColor Cyan
+# 3. Win32_ classes filteren
+Write-Host "`n=== Win32_ classes ===" -ForegroundColor Cyan
 $win32classes = Get-CimClass -Namespace root\cimv2 -ClassName Win32_*
 $win32classes | Select-Object CimClassName | Format-Table -AutoSize
 
